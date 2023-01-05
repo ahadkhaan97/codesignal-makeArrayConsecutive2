@@ -2,6 +2,7 @@ fun main() {
     print(solution(mutableListOf(6, 2, 3, 8)))
 }
 
+//iterative approach
 fun solution(statues: MutableList<Int>): Int {
     statues.sort()
     var statuesToBeAdded = 0
@@ -12,4 +13,9 @@ fun solution(statues: MutableList<Int>): Int {
     }
 
     return statuesToBeAdded
+}
+
+//formula driven approach
+fun solution2(statues: MutableList<Int>): Int {
+    return statues.maxOrNull()!! - (statues.minOrNull()!! - 1) - statues.size
 }
